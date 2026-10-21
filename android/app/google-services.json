@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "456606176899",
+    "project_id": "imtihaan-ucp",
+    "storage_bucket": "imtihaan-ucp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456606176899:android:34e124b4c1d0ac4492edb6",
+        "android_client_info": {
+          "package_name": "com.example.imtihaan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456606176899-6ld16i4tsdml2rsd4m9sq4mj1jqojt0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNgQdaERoP8Gj0X731JiDs1rh74tNx52Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456606176899-6ld16i4tsdml2rsd4m9sq4mj1jqojt0l.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "456606176899-tl8kff4p1igmnca3htnf3b74mnacqteh.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.imtihaan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

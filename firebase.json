@@ -1,0 +1,28 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "imtihaan-ucp",
+          "appId": "1:456606176899:android:34e124b4c1d0ac4492edb6",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "imtihaan-ucp",
+          "configurations": {
+            "android": "1:456606176899:android:34e124b4c1d0ac4492edb6",
+            "ios": "1:456606176899:ios:27f075665692c02692edb6"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "rules": "firestore.rules"
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
