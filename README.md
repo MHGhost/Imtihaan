@@ -1,47 +1,77 @@
-# Imtihaan
+# Imtihaan 📚
 
-Imtihaan is a Flutter study app for turning course materials into study aids. It includes Firebase email/Google authentication, document summaries, generated practice questions, handwriting OCR, quiz performance tracking, and profile/settings screens.
+**A Flutter-based study companion designed to help students turn learning materials into study aids.**
 
-## Current status
+Imtihaan combines Firebase authentication, document processing, handwriting recognition, and AI-powered study features in one mobile application.
 
-This repository is being prepared for development and review. AI features require a separately deployed backend; the app intentionally contains no OpenAI secret. Configure `AI_PROXY_URL` at build time after deploying that backend. The backend should accept `POST` JSON shaped as `{"action":"summary|mcqs","text":"..."}` and return `{"result":"..."}` for summaries or `{"result":[...]}` for MCQs. Keep the provider API key only in the backend's secret store, authenticate/rate-limit requests, and validate input and output.
+## ✨ Features
 
-Firebase is currently configured for the Android and iOS app registrations in `imtihaan-ucp`. The application ID is still the Flutter template value `com.example.imtihaan`; register a production package/bundle ID in Firebase and regenerate platform configuration before publishing. Firebase security rules are included in this repository and must be deployed to the Firebase project.
+- **Authentication:** Email/password and Google sign-in.
+- **Document Summaries:** Extract text from PDF and DOCX files and generate AI summaries.
+- **Handwriting OCR:** Convert handwritten content into digital text.
+- **Practice Quizzes:** Generate multiple-choice questions using AI.
+- **Performance Tracking:** Keep track of quiz performance totals.
+- **Personalization:** Profile management, profile images, themes, and settings.
 
-Privacy and support contact: `safdarhamza115@gmail.com`. The in-app privacy notice is a development draft based on current source behavior; review it against the final deployed AI backend and project settings before public release.
+*AI summaries and quiz generation require a separately deployed backend.*
 
-## Requirements
+## 🛠️ Tech Stack
+
+- **Framework:** Flutter / Dart
+- **Backend services:** Firebase Authentication, Cloud Firestore, Firebase Storage
+- **AI integration:** Backend API configured through `AI_PROXY_URL`
+- **Document processing:** PDF/DOCX text extraction and handwriting OCR
+
+## 🚀 Getting Started
+
+### Prerequisites
 
 - Flutter SDK compatible with Dart `^3.6.0`
-- A Firebase project configured for Android and/or iOS, with Authentication, Cloud Firestore, and Storage enabled
-- An AI backend for document summaries and MCQ generation
+- Android Studio and Android SDK, or Xcode for iOS development
+- A configured Firebase project
+- A deployed AI backend for AI-powered features
 
-## Run locally
+### Setup
 
-1. Install Flutter and the platform tooling (Android Studio/Android SDK or Xcode).
-2. Fetch dependencies: `flutter pub get`.
-3. Configure Firebase for the platforms you will run. Do not commit service-account credentials, signing keys, or provider secrets.
-4. Authenticate the Firebase CLI with the project owner account, review the included rules, then deploy them with `firebase deploy --only firestore:rules,storage`.
-5. Run the app: `flutter run`.
-6. To enable AI, pass the backend URL at build/run time, for example `flutter run --dart-define=AI_PROXY_URL=https://your-backend.example/api/ai`.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/MHGhost/Imtihaan.git
+   cd Imtihaan
+   ```
+2. Install dependencies:
+   ```
+   flutter pub get
+   ```
+3. Configure Firebase for your target platform and enable the required authentication, Firestore, and Storage services.
+4. Review and deploy the Firebase security rules using the Firebase CLI and an authorized project account:
+   ```
+   firebase deploy --only firestore:rules,storage
+   ```
+5. Run the application:
+   ```
+   flutter run
+   ```
+6. To enable AI features, configure your deployed backend URL at build time:
+   ```bash
+   flutter run --dart-define=AI_PROXY_URL=https://your-backend.example/api/ai
+   ```
+   Replace the example URL with your actual backend endpoint. Keep provider API keys on the backend, never inside the Flutter app.
 
-## Features
+## 🔒 Security & Release Notes
 
-- Email/password and Google sign-in
-- Profile and profile-image management
-- PDF/DOCX text extraction and AI summaries
-- Handwriting text recognition
-- AI-generated multiple-choice quizzes and locally stored performance totals
-- Local history, theme, and settings screens
+Before a production release:
 
-## Before public release
+- Replace the template application ID `com.example.imtihaan` with your production identifier and update Firebase configuration.
+- Review and deploy Firebase security rules.
+- Finalize the privacy notice and Terms of Service.
+- Secure the AI backend with authentication, rate limiting, and input validation.
+- Configure release signing and review data retention practices.
+- Add automated tests for the app's main features.
 
-- Replace the template application ID and regenerate Firebase platform configuration.
-- Have the development privacy notice and Terms of Service reviewed and finalized for your release and data handling.
-- Deploy and secure the AI backend; never embed its provider key in the app.
-- Review Firebase rules, platform permissions, release signing, and privacy/data retention practices.
-- Replace the starter widget test with tests for Imtihaan's actual flows and run analysis/tests on supported platforms.
+## 📬 Contact
 
-## License
+For privacy and support inquiries: [**safdarhamza115@gmail.com**](mailto:safdarhamza115@gmail.com)
 
-No license has been selected yet. Add a license before accepting external contributions or granting reuse rights.
+## 📄 License
+
+No license has been selected yet.
